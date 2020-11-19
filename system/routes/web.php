@@ -7,6 +7,7 @@ use App\http\Controllers\AuthController;
 use App\http\Controllers\ProdukController;
 use App\http\Controllers\UserController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,6 +34,7 @@ Route::get('produk/{produk}', [ProdukController::class, 'show']);
 Route::get('produk/{produk}/edit', [ProdukController::class, 'edit']);
 Route::put('produk/{produk}', [ProdukController::class, 'update']);
 Route::delete('produk/{produk}', [ProdukController::class, 'destroy']);
+Route::post('produk/filter', [ProdukController::class, 'filter']);
 
 
 route::get('user', [UserController::class, 'index']);
@@ -48,4 +50,5 @@ route::post('log', [AuthController::class, 'logProcess']);
 
 route::get('register', [AuthController::class, 'showregister']);
 route::post('register', [AuthController::class, 'registerProcess']);
+
 

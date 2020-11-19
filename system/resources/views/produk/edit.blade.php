@@ -10370,8 +10370,8 @@ body {
                         </div>
                         <div class="col-md-3">
                             <div class="from-group">
-                                    <label for="" class="control-label">Stock</label>
-                                    <input type="text" class="form-control" name="stock" value="{{$produk->stok}}">
+                                    <label for="" class="control-label">Stok</label>
+                                    <input type="text" class="form-control" name="stok" value="{{$produk->stok}}">
                             </div>
                         </div>
                     </div>

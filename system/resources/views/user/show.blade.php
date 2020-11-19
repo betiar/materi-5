@@ -10342,7 +10342,7 @@ body {
                           <div class="card">
                             <div class="card-header">
                               Detail Data User
-                                </div>
+                            </div>
                             <div class="card-body">
                                <h3>{{$user->nama}}</h3>
                                <hr>
@@ -10350,9 +10350,9 @@ body {
                                     {{"@".$user->username}} |
                                     Email : {{$user->email}}
                                </p>
-          </div>
-      </div>
-  </div>
+                          </div>
+                      </div>
+                  </div>
                 </div>
                 </main>
                 <footer class="py-4 bg-light mt-auto">

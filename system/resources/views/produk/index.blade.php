@@ -10,6 +10,7 @@
         <link href="{{('public')}}/assets/css/styles.css" rel="stylesheet" />
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -76,6 +77,40 @@
                   <div class="container">
                       <div class="row">
                         <div class="col-md-12 mt-5">
+                            <div class="card">
+                                <div class="card-header">
+                                    Filter
+                                </div>
+                                <div class="card-bdoy mb-3">
+                                    <form action="{{url('produk/filter')}}" method="post">
+                                        @csrf
+                                        <div class="form-group">
+                                            <label for="" class="control-label">Nama</label>
+                                            <input type="text" class="form-control" name="nama" value='{{$nama ?? ""}}'>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="" class="control-label">Stok</label>
+                                            <input type="text" class="form-control" name="stok" value='{{$stok ?? ""}}'>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                            <label for="" class="control-label">Harga Min</label>
+                                            <input type="text" class="form-control" name="harga_min" value='{{$harga_min ?? ""}}'>
+                                        </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                               <div class="form-group">
+                                            <label for="" class="control-label">Harga Max</label>
+                                            <input type="text" class="form-control" name="harga_max" value='{{$harga_max ?? ""}}'>
+                                        </div> 
+                                            </div>
+                                        </div>
+                                        
+                                        <button class="btn btn-dark float-right"><i class="material-icons">search</i>Filter</button>
+                                    </form>
+                                </div>
+                            </div>
                           <div class="card">
                             <div class="card-header">
                                 Data Produk
@@ -88,6 +123,7 @@
                                 <th>Aksi</th>
                                 <th>Nama</th>
                                 <th>Harga</th>
+                                <th>Berat</th>
                                 <th>Stok</th>
                             </thead>
                             <tbody>
@@ -96,13 +132,14 @@
                                     <td>{{$loop->iteration}}</td>
                                     <td>
                                         <div class="btn-group">
-                                    <a href="{{url('produk', $produk->id)}}" class="btn btn-dark"><i class="fa fa-info"></i></a>
-                                    <a href="{{url('produk', $produk->id)}}/edit" class="btn btn-warning"><i class="fa fa-edit"></i></a>
-                                    @include('template.utils.delete', ['url' => url('produk', $produk->id)])
-                                </div>
+                                            <a href="{{url('produk', $produk->id)}}" class="btn btn-dark"><i class="fa fa-info"></i></a>
+                                            <a href="{{url('produk', $produk->id)}}/edit" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                                            @include('template.utils.delete', ['url' => url('produk', $produk->id)])
+                                        </div>
                                     </td>
                                     <td>{{$produk->nama}}</td>
                                     <td>{{$produk->harga}}</td>
+                                    <td>{{$produk->berat}}</td>
                                     <td>{{$produk->stok}}</td>
                                 </tr>
                                 @endforeach

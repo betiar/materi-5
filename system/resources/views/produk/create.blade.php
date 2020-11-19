@@ -10366,18 +10366,18 @@ body {
                         </div>
                         <div class="col-md-3">
                             <div class="from-group">
-                                    <label for="" class="control-label">Stock</label>
-                                    <input type="text" class="form-control" name="stock">
+                                    <label for="" class="control-label">Stok</label>
+                                    <input type="text" class="form-control" name="stok">
                             </div>
                         </div>
+                      </div>
+                        <div class="from-group">
+                            <label for="" class="control-label">Deskripsi</label>
+                            <textarea name="deskripsi" class="form-control"></textarea>
+                        </div>
+                        <button class="btn btn-dark float-right mt-3"><i class="fa fa-save"></i>Simpan</button>
                     </div>
-                                <div class="from-group">
-                                    <label for="" class="control-label">Deskripsi</label>
-                                    <textarea name="deskripsi" class="form-control"></textarea>
-                            </div>
-                            <button class="btn btn-dark float-right"><i class="fa fa-save"></i>Simpan</button>
-                    </div>
-                    </form>
+                </form>
           </div>
       </div>
   </div>
