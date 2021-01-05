@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\UserDetail;
 
 class UserController extends Controller {
     function index(){
@@ -17,7 +18,8 @@ class UserController extends Controller {
         $user->nama = request('nama');
         $user->username = request('username');
         $user->email = request('email');
-        $user->password = bcrypt(request('password'));
+        $user->password = request('password');
+        $user->jenis_kelamin = 1;
         $user->save();
 
         return redirect('user')->with('success', 'Data Berhasil Ditambahkan');
@@ -35,10 +37,14 @@ class UserController extends Controller {
         $user->nama = request('nama');
         $user->username = request('username');
         $user->email = request('email');
-        if(request('password')) $user->password = bcrypt(request('password'));
+        if(request('password')) $user->password = request('password');
         $user->save();
-
-        return redirect('user');
+        $userDetail = new UserDetail;
+         $userDetail->id_user = $user->id;
+         $userDetail->no_handphone = request('no_handphone');
+         $userDetail->save();
+         
+        return redirect('user')->with('success', 'Data Berhasil Ditambahkan');
     }
     function destroy(User $user){
         $user->delete();

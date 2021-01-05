@@ -10348,9 +10348,10 @@ body {
                                <h3>{{$produk->nama}}</h3>
                                <hr>
                                <p>
-                                    Rp. {{number_format($produk->harga)}} |
+                                    {{$produk->harga}} |
                                     Stok : {{$produk->stok}} |
-                                    Berat : {{$produk->berat}} gr
+                                    Berat : {{$produk->berat}} gr |
+                                    Tanggal Produk : {{$produk->created_at->format("d F Y")}}
                                </p>
                                <p>
                                     {!! nl2br($produk->deskripsi) !!}

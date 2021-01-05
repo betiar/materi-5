@@ -10350,6 +10350,9 @@ body {
                                     {{"@".$user->username}} |
                                     Email : {{$user->email}}
                                </p>
+                               <p>
+                                 No Handphone : {{$user->no_handphone}}
+                               </p>
                           </div>
                       </div>
                   </div>
